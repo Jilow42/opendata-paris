@@ -5,7 +5,7 @@ export default class Card extends React.Component {
   constructor() {
     super();
     this.state = {
-      data: ['Plop'],
+      data: [],
     };
   }
 
@@ -22,6 +22,13 @@ export default class Card extends React.Component {
   render() {
     const { data } = this.state;
     console.log(data);
+    if (data.length === 0) {
+      return (
+        <div>
+          Non data
+        </div>
+      );
+    }
     return (
       data.map((element) => (
         <div className="card">
