@@ -1,22 +1,12 @@
 import React from 'react';
-import Axios from 'axios';
+import { Card, Button } from 'react-bootstrap';
 
-export default class Card extends React.Component {
+export default class EvevntCard extends React.Component {
   constructor() {
     super();
     this.state = {
       data: [],
     };
-  }
-
-  componentDidMount() {
-    console.log('Plop');
-    Axios.get('https://opendata.paris.fr/api/datasets/1.0/search/?q=')
-      .then((res) => {
-        console.log(res);
-        this.setState(res.data.datasets);
-      })
-      .catch((err) => console.error(err));
   }
 
   render() {
@@ -25,27 +15,20 @@ export default class Card extends React.Component {
     if (data.length === 0) {
       return (
         <div>
-          Non data
+          non data
         </div>
       );
     }
     return (
-      data.map((element) => (
-        <div className="card">
-          <h1>
-            {element.datasetid}
-          </h1>
-          {/* <img src={element} className="card-img-top" alt={element} />
-          <div className="card-body">
-            <h5 className="card-title">
-              {element}
-            </h5>
-            <p className="card-text">
-              {element}
-            </p>
-            <a href={element} className="btn btn-primary">More infos</a>
-          </div> */}
-        </div>
+      data.datasets.map((element) => (
+        <Card style={{ width: '18rem' }}>
+          <Card.Img variant="top" src={element} />
+          <Card.Body>
+            <Card.Title>{element.title}</Card.Title>
+            <Card.Text>{element.descrition}</Card.Text>
+            <Button variant="primary">More Infos</Button>
+          </Card.Body>
+        </Card>
       ))
     );
   }

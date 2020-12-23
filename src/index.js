@@ -4,11 +4,13 @@ import ReactDOM from 'react-dom';
 import './main.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Card from './components/Card';
+import EventCard from './components/Card';
+import NavForm from './components/Form';
 
 const App = () => (
   <div className="container">
-    <Card />
+    <NavForm />
+    <EventCard />
   </div>
 );
 

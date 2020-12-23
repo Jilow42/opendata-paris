@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
+    "plop": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production",
     "fix": "webpack-dev-server --mode development --open --fix"
   },
