@@ -15,7 +15,6 @@ import 'notyf/notyf.min.css';
 
 import Body from './components/body';
 import Formulaire from './components/form';
-import Details from './components/details';
 
 class Search extends React.Component {
   constructor(props) {
@@ -53,7 +52,6 @@ const App = () => (
   <Router>
     <Switch>
       <Route exact path="/" component={Search} />
-      <Route path="/:id" component={Details} />
       <Redirect to="/" />
     </Switch>
   </Router>
